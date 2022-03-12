@@ -11,7 +11,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 import it.gdsoftware.scontrino.xml70.jaxb.DatiCorrispettiviType;
 import it.gdsoftware.scontrino.xml70.jaxb.FormatoTrasmissioneType;
-import it.gdsoftware.scontrino.xml70.core.Scontrino;
 import it.gdsoftware.scontrino.xml70.core.datida.DatiDA;
 import it.gdsoftware.scontrino.xml70.core.datirt.DatiRT;
 import it.gdsoftware.scontrino.xml70.core.datirt.Riepilogo;
