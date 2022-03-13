@@ -9,6 +9,7 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import it.gdsoftware.scontrino.xml70.core.Scontrino;
 import it.gdsoftware.scontrino.xml70.jaxb.DatiCorrispettiviType;
 import it.gdsoftware.scontrino.xml70.jaxb.FormatoTrasmissioneType;
 import it.gdsoftware.scontrino.xml70.core.datida.DatiDA;
@@ -47,6 +48,7 @@ public class Main {
 			//<dataOraRilevazione></dataOraRilevazione>
 			final GregorianCalendar now = new GregorianCalendar();
 			XMLGregorianCalendar dataOraRilevazione = DatatypeFactory.newInstance().newXMLGregorianCalendar(now);
+
 			scontrino.setDataOraRilevazione(dataOraRilevazione);
 
 			//<datiRT></datiRT>
@@ -77,7 +79,7 @@ public class Main {
 			String pathToSave = args[1];
 			File[] files = new File(pathToSave).listFiles((dir, name) -> name.endsWith(".xml"));
 			for (File file : Objects.requireNonNull(files)){
-				//
+
 				DatiCorrispettiviType corrispettiviType = (DatiCorrispettiviType) jaxbUnmarshaller.unmarshal(file);//Sta
 				System.out.println(corrispettiviType.getDataOraRilevazione());
 			}
