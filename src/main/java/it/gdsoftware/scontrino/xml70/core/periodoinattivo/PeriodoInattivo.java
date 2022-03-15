@@ -16,7 +16,7 @@ public class PeriodoInattivo {
 	
 	public PeriodoInattivoType creaPeriodoInattivo() {
 		PeriodoInattivoType periodoInattivo = new PeriodoInattivoType();
-		periodoInattivo.setDal(al);
+		periodoInattivo.setDal(dal);
 		periodoInattivo.setAl(al);
 		return periodoInattivo;
 	}
