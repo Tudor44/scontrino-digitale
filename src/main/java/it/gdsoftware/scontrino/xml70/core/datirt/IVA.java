@@ -28,7 +28,7 @@ public class IVA {
     public IVAType creaIVA(){
         IVAType iva = new IVAType();
         iva.setAliquotaIVA(aliquotaIVA);
-        iva.setImposta(imposta);;
+        iva.setImposta(imposta);
         return iva;
     }
 }
