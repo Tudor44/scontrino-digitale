@@ -43,16 +43,24 @@
                             <xsdOptions>
                                 <xsdOption>
                                     <xsd>src/main/resources/scontrini_schema.xsd</xsd> <!--shares a common.xsd file causing the conflicts-->
-                                    <packagename>it.gdsoftware.scontrino.xml70.core</packagename>
-                                </xsdOption>
-                                <xsdOption>
-                                    <xsd>src/main/resources/scontrini_schema.xsd</xsd>
-                                    <packagename>it.gdsoftware.scontrino.xml70.core</packagename>
+                                    <packagename>it.gdsoftware.scontrino.xml70.jaxb</packagename>
                                 </xsdOption>
                             </xsdOptions>
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.1</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>it.gdsoftware.scontrino.xml70.main.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
         <pluginManagement>

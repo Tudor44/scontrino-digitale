@@ -8,7 +8,6 @@ import it.gdsoftware.scontrino.xml70.core.segnalazione.Segnalazione;
 import it.gdsoftware.scontrino.xml70.core.trasmissione.Trasmissione;
 import it.gdsoftware.scontrino.xml70.jaxb.DatiCorrispettiviType;
 
-import javax.swing.text.html.Option;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.List;
 import java.util.Optional;
@@ -105,12 +104,12 @@ public class Scontrino {
         if(Optional.ofNullable(datiDA).isPresent())
             datiCorrispettiviType.setDatiDA(datiDA.get().creaDatiDA());
         if(Optional.ofNullable(interventoTecnico).isPresent()){
-            for(InterventoTecnico interventoTecnico : interventoTecnico.get())
-                datiCorrispettiviType.getInterventoTecnico().add(interventoTecnico.creaInterventoTecnico());
+            for(InterventoTecnico localInterventoTecnico : interventoTecnico.get())
+                datiCorrispettiviType.getInterventoTecnico().add(localInterventoTecnico.creaInterventoTecnico());
         }
         if(Optional.ofNullable(segnalazione).isPresent()){
-            for(Segnalazione segnalazione : segnalazione.get())
-                datiCorrispettiviType.getSegnalazione().add(segnalazione.creaSegnalazione());
+            for(Segnalazione localSegnalazione : segnalazione.get())
+                datiCorrispettiviType.getSegnalazione().add(localSegnalazione.creaSegnalazione());
         }
         return datiCorrispettiviType;
     }
