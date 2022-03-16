@@ -18,16 +18,14 @@ import it.gdsoftware.scontrino.xml70.core.datirt.Riepilogo;
 import it.gdsoftware.scontrino.xml70.core.datirt.Totali;
 
 import it.gdsoftware.scontrino.xml70.core.trasmissione.Trasmissione;
+import javax.xml.namespace.QName;
 
 public class Main {
 
-	public static final String TIPOLOGIA = "DF";
-	public static JAXBContext jaxbContext = null;
-
 	public static void main(String[] args) throws JAXBException, DatatypeConfigurationException {
-
+                final String TIPOLOGIA = "DF";
 		String azione = args[0];
-		jaxbContext = JAXBContext.newInstance( DatiCorrispettiviType.class );
+		JAXBContext jaxbContext = JAXBContext.newInstance( DatiCorrispettiviType.class );
 
 		//Crea un test per la creazione di un semplice corrispettivo di prova
 		if(Costanti.TEST_CREA_SCONTRINO.equals(azione)){
@@ -70,7 +68,7 @@ public class Main {
 			scontrino.setSignature(signatureType);*/
 
 			//Creazione da una cartella arbitraria
-			jaxbMarshaller.marshal(scontrino.creaScontrino(), new File(pathToSave+"/"+codicePaese+piva+"_"+TIPOLOGIA+"_"+progressivo+".xml"));
+                        jaxbMarshaller.marshal(new JAXBElement<>(new QName("http://ivaservizi.agenziaentrate.gov.it/docs/xsd/corrispettivi/dati/v1.0","DatiCorrispettivi"), DatiCorrispettiviType.class, scontrino.creaScontrino()), new File(pathToSave+"/"+codicePaese+piva+"_"+TIPOLOGIA+"_"+progressivo+".xml"));
 
 		}
 		//Leggi tutti i corrispettivi xml da cartella arbitraria
@@ -79,8 +77,8 @@ public class Main {
 			String pathToSave = args[1];
 			File[] files = new File(pathToSave).listFiles((dir, name) -> name.endsWith(".xml"));
 			for (File file : Objects.requireNonNull(files)){
-
-				DatiCorrispettiviType corrispettiviType = (DatiCorrispettiviType) jaxbUnmarshaller.unmarshal(file);//Sta
+                                JAXBElement<?> jAXBElement = (JAXBElement<?>) jaxbUnmarshaller.unmarshal(file);
+                                DatiCorrispettiviType corrispettiviType = (DatiCorrispettiviType) jAXBElement.getValue();
 				System.out.println(corrispettiviType.getDataOraRilevazione());
 			}
 		}
