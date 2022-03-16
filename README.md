@@ -27,14 +27,14 @@ mvn install
 La libreria è testata con Maven 3 e Java 8 (Da testare con le versioni più recenti).
 Avvio creazione xml di prova:
 ```
-java -jar creaScontrino IT 99999999999 00001 ./xml
+java -jar scontrino-digitale-0.1.jar creaScontrino IT 99999999999 00001 ./xml
 ```
 
 L'azione genera un file xml nominato IT_99999999999_DF_00001.xml, sotto la cartella indicata che viene indicata
 
 Avvio lettura xml dei corrispettivi presenti in una cartella arbitraria:
 ```
-java -jar leggiScontrino ./xml
+java -jar scontrino-digitale-0.1.jar leggiScontrino ./xml
 ```
 
 ### Licenza
