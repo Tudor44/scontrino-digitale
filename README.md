@@ -37,6 +37,46 @@ Avvio lettura xml dei corrispettivi presenti in una cartella arbitraria:
 java -jar scontrino-digitale-0.1.jar leggiScontrino ./xml
 ```
 
-### Licenza
+# Italian digital receipt
+Library for reading and creating electronic counterparts from Telematic Registrators
+
+Updated to the latest specification: XMLcor Version 7.0 ex art. 2, d.Lgs. 127/2015 [Click here for details](https://www.agenziaentrate.gov.it/portale/documents/20143/288260/Allegato+-TipiDatiCorrispettivi-V7.0+-+giugno+2020-29032021.pdf/164190b4-883e-7c43-5b41-86dbb6389eb2)   
+
+It is a version 0.1, so any changes, contributions, custom requests and suggestions are welcome.
+
+Basic features:
+
+1) Ability to create a test xml with preset data.
+2) Ability to read and extract data from xml present in an arbitrary folder.
+3) Full support for the specification. (Including data from vending machines).
+
+### Test installation
+
+Inside the project folder, run from the command line:
+
+```
+mvn clean
+```
+
+```
+mvn install
+```
+
+The library has been tested with Maven 3 and Java 11 (Updated now).
+Start creating test xml:
+
+```
+java -jar scontrino-digitale-0.1.jar creaScontrino IT 99999999999 00001 ./xml
+```
+
+This action generates an xml file named IT_99999999999_DF_00001.xml, under the indicated folder
+
+Start reading xml receipts in an arbitrary folder:
+
+```
+java -jar scontrino-digitale-0.1.jar leggiScontrino ./xml
+```
+
+### Licence
 CC BY 4.0 
 Tudor44

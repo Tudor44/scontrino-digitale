@@ -23,7 +23,8 @@ import javax.xml.namespace.QName;
 public class Main {
 
 	public static void main(String[] args) throws JAXBException, DatatypeConfigurationException {
-                final String TIPOLOGIA = "DF";
+		
+        final String TIPOLOGIA = "DF";
 		String azione = args[0];
 		JAXBContext jaxbContext = JAXBContext.newInstance( DatiCorrispettiviType.class );
 
