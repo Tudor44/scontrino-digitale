@@ -5,7 +5,7 @@ Aggiornata all'ultima specifica:
 XMLcor Versione 7.0 ex art. 2, d.Lgs. 127/2015
 [Clicca qui per i dettagli](https://www.agenziaentrate.gov.it/portale/documents/20143/288260/Allegato+-TipiDatiCorrispettivi-V7.0+-+giugno+2020-29032021.pdf/164190b4-883e-7c43-5b41-86dbb6389eb2)
 
-E' una versione 0.1, quindi eventuali modifiche, contributi, richieste su misura e suggerimenti sono ben accetti.
+E' una versione 0.2, quindi eventuali modifiche, contributi, richieste su misura e suggerimenti sono ben accetti.
 
 Funzionalità di base:
 
@@ -24,7 +24,7 @@ mvn clean
 mvn install
 ```
 
-La libreria è testata con Maven 3 e Java 8 (Da testare con le versioni più recenti).
+La libreria è testata con Maven 3 e Java 8 (Aggiornata).
 Avvio creazione xml di prova:
 ```
 java -jar scontrino-digitale-0.1.jar creaScontrino IT 99999999999 00001 ./xml
